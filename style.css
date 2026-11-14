@@ -1,0 +1,147 @@
+:root {
+  --bg: #eaf1f4;
+  --card: #ffffff;
+  --ink: #12303b;
+  --muted: #5b7480;
+  --line: #cfdde3;
+  --accent: #0f7c8f;
+  --accent-ink: #ffffff;
+  --danger: #c62d2d;
+}
+
+body.dark {
+  --bg: #0c1a21;
+  --card: #14262f;
+  --ink: #e6f0f3;
+  --muted: #8fa9b4;
+  --line: #264250;
+  --accent: #2bb3c9;
+  --accent-ink: #06222a;
+  --danger: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 { margin: 0; font-size: 32px; }
+h2 { margin: 0; font-size: 22px; }
+
+input {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+button {
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(1.1); }
+button.danger { background: var(--danger); color: #fff; }
+button.ghost { background: transparent; color: var(--ink); font-size: 22px; padding: 2px 10px; }
+
+#tripForm { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+#tripForm input { flex: 1; min-width: 160px; }
+
+#tripsList { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+#tripsList button {
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+#tripsList button.active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.empty { color: var(--muted); }
+
+.top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.top .budget { margin-inline-end: auto; }
+.top .budget b { color: var(--accent); font-size: 28px; }
+
+.weather { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.weather-day {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-align: center;
+  font-size: 14px;
+}
+.weather-day .icon { font-size: 24px; }
+.weather-msg { font-size: 14px; color: var(--muted); }
+
+#days {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+}
+
+.day {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.day-header { display: flex; align-items: center; gap: 8px; font-weight: bold; margin-bottom: 8px; }
+.day-header .name { flex: 1; }
+.day-header .sum { color: var(--accent); }
+
+.day ul { list-style: none; padding: 0; margin: 0 0 12px; }
+.day li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.day li .info { flex: 1; display: flex; justify-content: space-between; gap: 8px; }
+
+.del { background: transparent; color: var(--danger); padding: 0 6px; font-size: 16px; }
+
+.day form { display: flex; gap: 6px; }
+.day form input:first-child { flex: 1; min-width: 0; }
+.day form input:nth-child(2) { width: 80px; }
+.day form button { padding: 9px 12px; }
+.chart-box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.chart-box h3 { margin: 0 0 12px; font-size: 16px; }
+.chart-wrap { position: relative; height: 260px; }
